@@ -54,11 +54,6 @@ int main(int argc, char* argv[]) {
 
 	gi.SetGameObjects(gos);
 	gi.Run();
-	//a = gi.GetGameObjects;
-	go1 = gos.GetObjext(0);
-	std::cout << (go1.GetSourceRect().w);
-	std::cout << gos.GetGameObjects().size();
-	std::cout << gos.GetGameObjects()[1].GetSourceRect().h;
-	
+
 	return 0;
 }
