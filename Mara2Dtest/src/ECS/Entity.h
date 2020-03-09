@@ -1,5 +1,13 @@
 #pragma once
-class Entity
-{
-};
 
+namespace Mara {
+
+	class Entity {
+
+	private:
+		const int ID;
+
+	public:
+
+	};
+}
