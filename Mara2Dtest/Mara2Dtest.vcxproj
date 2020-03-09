@@ -144,6 +144,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\ECS\Component.cpp" />
+    <ClCompile Include="src\ECS\Entity.cpp" />
     <ClCompile Include="src\Keyboard.cpp" />
     <ClCompile Include="src\GameObjects.cpp" />
     <ClCompile Include="src\GameObject.cpp" />
@@ -154,6 +156,8 @@
     <ClCompile Include="src\TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\ECS\Component.h" />
+    <ClInclude Include="src\ECS\Entity.h" />
     <ClInclude Include="src\Keyboard.h" />
     <ClInclude Include="src\GameObjects.h" />
     <ClInclude Include="src\GameObject.h" />
