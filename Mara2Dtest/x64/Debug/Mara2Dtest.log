@@ -1,8 +1,0 @@
-﻿  GameInstance.cpp
-  Keyboard.cpp
-  Main.cpp
-  TextureManager.cpp
-  Window.cpp
-E:\C++\Testi\Mara2Dtest\Mara2Dtest\src\Window.cpp(26,60): warning C4806: '|': unsafe operation: no value of type 'bool' promoted to type 'SDL_WindowFlags' can equal the given constant
-  Generating Code...
-  Mara2Dtest.vcxproj -> E:\C++\Testi\Mara2Dtest\x64\Debug\Mara2Dtest.exe
