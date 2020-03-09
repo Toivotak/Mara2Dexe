@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>E:\C++\Testi\Mara2Dtest\Mara2Dtest\src\</FILEPATH>
+      <FILENAME>Vector2.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Vector2::x' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Vector2::{ctor}</FUNCTION>
+    <DECORATED>??0Vector2@@QEAA@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Vector2::x</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>E:\C++\Testi\Mara2Dtest\Mara2Dtest\src\</FILEPATH>
+      <FILENAME>Vector2.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Vector2::y' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Vector2::{ctor}</FUNCTION>
+    <DECORATED>??0Vector2@@QEAA@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Vector2::y</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>E:\C++\Testi\Mara2Dtest\Mara2Dtest\src\</FILEPATH>
+      <FILENAME>Vector2.cpp</FILENAME>
+      <LINE>7</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Vector2::ypos' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Vector2::{ctor}</FUNCTION>
+    <DECORATED>??0Vector2@@QEAA@HH@Z</DECORATED>
+    <FUNCLINE>7</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Vector2::ypos</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>E:\C++\Testi\Mara2Dtest\Mara2Dtest\src\</FILEPATH>
+      <FILENAME>Vector2.cpp</FILENAME>
+      <LINE>7</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Vector2::xpos' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Vector2::{ctor}</FUNCTION>
+    <DECORATED>??0Vector2@@QEAA@HH@Z</DECORATED>
+    <FUNCLINE>7</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Vector2::xpos</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>E:\C++\Testi\Mara2Dtest\Mara2Dtest\src\</FILEPATH>
+      <FILENAME>Vector2.cpp</FILENAME>
+      <LINE>11</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Vector2::x' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Vector2::{ctor}</FUNCTION>
+    <DECORATED>??0Vector2@@QEAA@MM@Z</DECORATED>
+    <FUNCLINE>11</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Vector2::x</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>E:\C++\Testi\Mara2Dtest\Mara2Dtest\src\</FILEPATH>
+      <FILENAME>Vector2.cpp</FILENAME>
+      <LINE>11</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Vector2::y' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Vector2::{ctor}</FUNCTION>
+    <DECORATED>??0Vector2@@QEAA@MM@Z</DECORATED>
+    <FUNCLINE>11</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Vector2::y</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>
