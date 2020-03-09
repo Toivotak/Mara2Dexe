@@ -1,6 +1,5 @@
 .vs/
-bin/
-bin-int/
 x64/
+Mara2Dtest/x64/
 
 *.user
