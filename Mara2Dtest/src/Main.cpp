@@ -12,16 +12,6 @@ int main(int argc, char* argv[]) {
 	Mara::GameObject go1;
 	Mara::GameObjects gos;
 
-	std::vector<int> test;
-	
-	
-	for (int i = 0; i < 10; i++) {
-		test.push_back(i);
-	}
-	for (int i = 0; i < 10; i++) {
-		std::cout << test[i];
-	}
-
 	go.SetSurface("src/assets/Ground/Grass1.png");
 	go.SetSourceRect(0, 0, 32, 32);
 	go.SetDestinationRect(0, 0, 32, 32);
@@ -42,7 +32,6 @@ int main(int argc, char* argv[]) {
 			break;
 		}
 	}
-	
 
 	go1.SetSurface("src/assets/Man1.png");
 	go1.SetSourceRect(0, 0, 128, 64);
