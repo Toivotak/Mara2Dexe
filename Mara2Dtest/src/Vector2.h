@@ -3,6 +3,7 @@
 
 /* 2d vector class with operators for easier manipulatios */
 namespace Mara {
+
 	struct Vector2 {
 
 		int x;
