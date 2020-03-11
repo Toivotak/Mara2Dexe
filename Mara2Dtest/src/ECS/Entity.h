@@ -1,4 +1,7 @@
 #pragma once
+#include "Component.h"
+#include <memory>
+#include <vector>
 
 namespace Mara {
 
@@ -6,8 +9,15 @@ namespace Mara {
 
 	private:
 		const int ID;
+		bool alive;
+		std::vector<std::unique_ptr<Component>> components;
 
 	public:
+		void Update();
+		void Draw();
+
+		bool IsAlive() const;
+		void Destroy();
 
 	};
 }

@@ -7,8 +7,8 @@ namespace Mara {
 
 	private:
 		SDL_Event event;
-	public:
 
+	public:
 		SDL_KeyboardEvent KeyEvent();
 		void PrintKeyInfo(SDL_KeyboardEvent* key);
 		void KeyEvent2(Uint32 key);

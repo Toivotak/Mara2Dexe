@@ -144,6 +144,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\ECS\Manager.cpp" />
     <ClCompile Include="src\ECS\Component.cpp" />
     <ClCompile Include="src\ECS\Entity.cpp" />
     <ClCompile Include="src\Keyboard.cpp" />
@@ -154,8 +155,10 @@
     <ClCompile Include="src\Vector2.cpp" />
     <ClCompile Include="src\Window.cpp" />
     <ClCompile Include="src\TextureManager.cpp" />
+    <ClCompile Include="src\ECS\Components\TextureComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\ECS\Manager.h" />
     <ClInclude Include="src\ECS\Component.h" />
     <ClInclude Include="src\ECS\Entity.h" />
     <ClInclude Include="src\Keyboard.h" />
@@ -165,6 +168,7 @@
     <ClInclude Include="src\Vector2.h" />
     <ClInclude Include="src\Window.h" />
     <ClInclude Include="src\TextureManager.h" />
+    <ClInclude Include="src\ECS\Components\TextureComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="src\assets\Ground\DirtRoadBottom.png" />
