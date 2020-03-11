@@ -86,6 +86,9 @@
     <ClInclude Include="src\ECS\Components\TextureComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ECS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="src\assets\Man2.png">

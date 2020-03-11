@@ -158,6 +158,7 @@
     <ClCompile Include="src\ECS\Components\TextureComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ECS.h" />
     <ClInclude Include="src\ECS\Manager.h" />
     <ClInclude Include="src\ECS\Component.h" />
     <ClInclude Include="src\ECS\Entity.h" />
