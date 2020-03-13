@@ -25,6 +25,7 @@ namespace Mara {
 
 		void SetSourceRect(int x, int y, int height, int width);
 		void SetDestinationRect(int x, int y, int height, int width);
+		void SetDestinationRect(SDL_Rect dRect);
 		void SetSurface(const char* filename);
 		void SetPlayable(bool player);
 		void SetMoveable(bool moving);

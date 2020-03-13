@@ -41,6 +41,11 @@ void Mara::GameObject::SetDestinationRect(int x, int y, int height, int width) {
 	destinationRect.w = width;
 }
 
+void Mara::GameObject::SetDestinationRect(SDL_Rect dRect) {
+
+	destinationRect = dRect;
+}
+
 void Mara::GameObject::SetSurface(const char* fileName) {
 
 	surface = IMG_Load(fileName);

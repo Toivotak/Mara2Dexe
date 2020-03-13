@@ -1,12 +1,53 @@
 #include "Keyboard.h"
 
-SDL_KeyboardEvent Mara::Keyboard::KeyEvent() {
+Mara::Keyboard::Keyboard() { 
 
-	return SDL_KeyboardEvent();
+	
 }
 
-void Mara::Keyboard::PrintKeyInfo(SDL_KeyboardEvent* key) {
-	std::cout << key->keysym.scancode;
+void Mara::Keyboard::GetEvent(SDL_Event event) {
+
+	this->event = event;
+}
+
+SDL_Rect Mara::Keyboard::KeyEvent(GameObject gameObject) {
+
+	//Vector2 move;
+	SDL_Rect move = gameObject.GetDestinationRect();
+
+	
+	if (event.type == SDL_KEYDOWN) {
+
+		switch (event.key.keysym.sym) {
+			if (gameObject.IsMoveable()) {
+				case SDLK_LEFT: {
+					std::cout << "Key LEFT " << "\n";
+					move.x--;
+					return move;
+					break;
+				}
+				case SDLK_RIGHT: {
+					std::cout << "Key RIGHT " << "\n";
+					move.x++;
+					return move;
+					break;
+				}
+				case SDLK_UP: {
+					std::cout << "Key UP " << "\n";
+					move.y--;
+					return move;
+					break;
+				}
+				case SDLK_DOWN: {
+					std::cout << "Key DOWN " << "\n";
+					move.y++;
+					return move;
+					break;
+				}
+			}
+		}
+	}
+	return move;
 }
 
 void Mara::Keyboard::KeyEvent2(Uint32 key) {
@@ -42,6 +83,7 @@ void Mara::Keyboard::KeyEvent2(Uint32 key) {
 			std::cout << "Keyup";
 			break;
 	}*/
+}
 
-
+Mara::Keyboard::~Keyboard() {
 }

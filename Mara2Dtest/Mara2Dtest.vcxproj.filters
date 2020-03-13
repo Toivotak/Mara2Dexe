@@ -36,19 +36,13 @@
     <ClCompile Include="src\GameObjects.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Keyboard.cpp">
+    <ClCompile Include="src\EventHandling\Keyboard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\ECS\Entity.cpp">
+    <ClCompile Include="src\EventHandling\Mouse.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\ECS\Component.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ECS\Manager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ECS\Components\TextureComponent.cpp">
+    <ClCompile Include="src\EventHandling\GameEvent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -71,22 +65,16 @@
     <ClInclude Include="src\GameObjects.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Keyboard.h">
+    <ClInclude Include="src\EventHandling\Keyboard.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\ECS\Entity.h">
+    <ClInclude Include="src\EventHandling\Event.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\ECS\Component.h">
+    <ClInclude Include="src\EventHandling\Mouse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\ECS\Manager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ECS\Components\TextureComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ECS.h">
+    <ClInclude Include="src\EventHandling\GameEvent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -8,7 +8,7 @@
 #include "GameObject.h"
 #include "GameObjects.h"
 #include "GameInstance.h"
-#include "Keyboard.h"
+#include "EventHandling/Keyboard.h"
 
 namespace Mara {
 
@@ -49,6 +49,7 @@ namespace Mara {
 		void Render(GameObjects gameObjects);
 		void Clean();
 		bool IsActive();
+
 		~Window();
 	};
 

@@ -13,11 +13,14 @@ namespace Mara {
 		std::vector<std::unique_ptr<Component>> components;
 
 	public:
+		
+
 		void Update();
-		void Draw();
+		void Init();
 
 		bool IsAlive() const;
 		void Destroy();
 
+		~Entity();
 	};
 }

@@ -4,7 +4,7 @@ SDL_Texture *p, *pa;
 Mara::GameObject go;
 Mara::GameObject goo;
 Mara::GameInstance instance;
-Mara::Keyboard keyboardInput;
+Mara::Keyboard key;
 
 int i = 0;
 
@@ -65,6 +65,7 @@ void Mara::Window::Init(const char* title, int resolution, bool fullscreen, Game
 	
 	goo.SetDestinationRect(0, 0, 32, 32);
 	goo.SetSourceRect(0, 0, 32, 32);
+	goo.SetMoveable(true);
 
 	goo.SetSurface("src/assets/Ground/RockyGround.png");
 
@@ -90,8 +91,6 @@ void Mara::Window::HandleEvents() {
 	case SDL_QUIT:
 		active = false;
 		break;
-	case SDL_KEYDOWN:
-		keyboardInput.KeyEvent2(event.key.keysym.sym);
 		/*
 		switch (event.key.keysym.sym)
 		{
@@ -101,7 +100,7 @@ void Mara::Window::HandleEvents() {
 		case SDLK_DOWN:  std::cout << "Key DOWN "  << "\n"; SDL_Delay(100); break;
 		}
 		*/
-		break;
+		
 	default:
 		break;
 	}
@@ -113,10 +112,16 @@ void Mara::Window::Update() {
 	go.SetDestinationRect(i, i, i, i);
 	go.SetSourceRect(i, i, i, i);
 	
-	goo.SetDestinationRect(i, i, 32, 32);
+	
 	
 	//key.KeyEvent2();
+	//SDL_PollEvent(&event);
+	key.GetEvent(event);
 	
+	dRect = key.KeyEvent(goo);
+
+	goo.SetDestinationRect(key.KeyEvent(goo));
+	//goo.SetDestinationRect(i, i, 32, 32);
 	i++;
 }
 
