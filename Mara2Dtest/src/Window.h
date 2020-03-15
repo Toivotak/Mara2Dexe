@@ -9,6 +9,7 @@
 #include "GameObjects.h"
 #include "GameInstance.h"
 #include "EventHandling/Keyboard.h"
+#include "EventHandling/InputManager.h"
 
 namespace Mara {
 
@@ -42,11 +43,11 @@ namespace Mara {
 		Window();
 
 		void Init();
-		void Init(const char* title, int resolution, bool fullscreen, GameObjects gameObjects);
+		void Init(const char* title, int resolution, bool fullscreen, GameInstance objectsRay);
 		void Draw(const char*);
 		void HandleEvents();
 		void Update();
-		void Render(GameObjects gameObjects);
+		void Render(GameInstance objectsRay);
 		void Clean();
 		bool IsActive();
 

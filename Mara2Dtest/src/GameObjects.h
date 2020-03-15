@@ -9,10 +9,17 @@ namespace Mara {
 	private:
 		GameObject go;
 		std::vector<GameObject> gameObjects;
+		std::vector<GameObjects> objectsRay;
 
 	public:
-		void PushGameObject(GameObject gameObj);
+		
 		std::vector<GameObject> GetGameObjects();
-		GameObject GetObjext(int i);
+		void PushGameObject(GameObject gameObj);
+		void PushGameObjects(GameObjects gameObjs);
+
+		std::vector<GameObjects> GetObjectsRay();
+		std::vector<GameObjects> GetObjectsRay(int i);
+		GameObjects GetObjects(int i);
+		GameObject GetObject(int i);
 	};
 }

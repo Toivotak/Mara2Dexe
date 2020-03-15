@@ -144,6 +144,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\GameObjects\PlayerObject.cpp" />
+    <ClCompile Include="src\EventHandling\InputManager.cpp" />
     <ClCompile Include="src\EventHandling\GameEvent.cpp" />
     <ClCompile Include="src\EventHandling\Mouse.cpp" />
     <ClCompile Include="src\EventHandling\Keyboard.cpp" />
@@ -156,6 +158,8 @@
     <ClCompile Include="src\TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\GameObjects\PlayerObject.h" />
+    <ClInclude Include="src\EventHandling\InputManager.h" />
     <ClInclude Include="src\EventHandling\GameEvent.h" />
     <ClInclude Include="src\EventHandling\Mouse.h" />
     <ClInclude Include="src\EventHandling\Event.h" />

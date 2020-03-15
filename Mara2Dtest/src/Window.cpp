@@ -4,7 +4,8 @@ SDL_Texture *p, *pa;
 Mara::GameObject go;
 Mara::GameObject goo;
 Mara::GameInstance instance;
-Mara::Keyboard key;
+Mara::Keyboard *key = new Mara::Keyboard();
+Mara::InputManager inputmgr;
 
 int i = 0;
 
@@ -38,7 +39,7 @@ void Mara::Window::Init() {
 	}
 }
 
-void Mara::Window::Init(const char* title, int resolution, bool fullscreen, GameObjects gameObjects) {
+void Mara::Window::Init(const char* title, int resolution, bool fullscreen, GameInstance objectsRay) {
 
 	Uint32 fc = SDL_WINDOW_FULLSCREEN;
 	if (!fullscreen) {
@@ -63,20 +64,28 @@ void Mara::Window::Init(const char* title, int resolution, bool fullscreen, Game
 		active = true;
 	}
 	
-	goo.SetDestinationRect(0, 0, 32, 32);
-	goo.SetSourceRect(0, 0, 32, 32);
+	goo.SetDestinationRect(0, 0, 128, 64);
+	goo.SetSourceRect(0, 0, 128, 64);
 	goo.SetMoveable(true);
 
-	goo.SetSurface("src/assets/Ground/RockyGround.png");
+	goo.SetSurface("src/assets/Man1.png");
 
 	p = SDL_CreateTextureFromSurface(renderer, goo.GetSurface());
 	
-	for (int i = 0; i < gameObjects.GetGameObjects().size(); i++) {
+	
+	for (int j = 0; j < objectsRay.GetObjectsRay().size(); j++) {
 
-		go = gameObjects.GetObjext(i);
+		GameObjects *gameObjects = new GameObjects();
+		gameObjects = &objectsRay.GetGameObjects(j);
+
+		for (int i = 0; i < gameObjects->GetGameObjects().size(); i++) {
+
+			go = gameObjects->GetObject(i);
 		
-		pa = SDL_CreateTextureFromSurface(renderer, go.GetSurface());
-		tex.push_back(pa);
+			pa = SDL_CreateTextureFromSurface(renderer, go.GetSurface());
+			tex.push_back(pa);
+		}
+		delete gameObjects;
 	}
 }
 
@@ -91,16 +100,7 @@ void Mara::Window::HandleEvents() {
 	case SDL_QUIT:
 		active = false;
 		break;
-		/*
-		switch (event.key.keysym.sym)
-		{
-		case SDLK_LEFT:  std::cout << "Key LEFT "  << "\n"; SDL_Delay(100); break;
-		case SDLK_RIGHT: std::cout << "Key RIGHT " << "\n"; SDL_Delay(100); break;
-		case SDLK_UP:    std::cout << "Key UP "    << "\n"; SDL_Delay(100); break;
-		case SDLK_DOWN:  std::cout << "Key DOWN "  << "\n"; SDL_Delay(100); break;
-		}
-		*/
-		
+	
 	default:
 		break;
 	}
@@ -112,20 +112,18 @@ void Mara::Window::Update() {
 	go.SetDestinationRect(i, i, i, i);
 	go.SetSourceRect(i, i, i, i);
 	
-	
-	
 	//key.KeyEvent2();
 	//SDL_PollEvent(&event);
-	key.GetEvent(event);
-	
-	dRect = key.KeyEvent(goo);
+	key->GetEvent(event);
+	inputmgr.Update();
+	dRect = key->KeyEvent(goo);
 
-	goo.SetDestinationRect(key.KeyEvent(goo));
+	goo.SetDestinationRect(key->KeyEvent(goo));
 	//goo.SetDestinationRect(i, i, 32, 32);
 	i++;
 }
 
-void Mara::Window::Render(GameObjects gameObjects) {
+void Mara::Window::Render(GameObjects objectsRay) {
 
 	SDL_RenderClear(renderer);
 	
@@ -142,6 +140,7 @@ void Mara::Window::Clean() {
 	SDL_DestroyWindow(window);
 	SDL_DestroyRenderer(renderer);
 	SDL_Quit();
+	delete key;
 }
 
 bool Mara::Window::IsActive(){

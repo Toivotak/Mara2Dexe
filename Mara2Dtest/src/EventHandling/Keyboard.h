@@ -1,10 +1,9 @@
 #pragma once
-#include "../GameInstance.h"
 #include "Event.h"
 
 namespace Mara {
 
-	class Keyboard{
+	class Keyboard {
 
 	private:
 		SDL_Event event;

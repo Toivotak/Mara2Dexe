@@ -1,15 +1,20 @@
 #include "GameInstance.h"
 
-void Mara::GameInstance::SetGameObjects(GameObjects gameObjects) {
+void Mara::GameInstance::SetObjectsRay(std::vector<GameObjects> objectRay) {
 
-	this->gameObjects = gameObjects;
+	this->objectRay = objectRay;
+}
+
+std::vector<Mara::GameObjects> Mara::GameInstance::GetObjectsRay() {
+	
+	return objectRay;
 }
 
 void Mara::GameInstance::Run() {
 
 	Mara::Window *window = new Mara::Window();
 
-	window->Init("aa", 3, false, gameObjects);
+	window->Init("aa", 3, false, objectRay);
 
 	while(window->IsActive()) {
 
@@ -17,7 +22,7 @@ void Mara::GameInstance::Run() {
 
 		window->HandleEvents();
 		window->Update();
-		window->Render(gameObjects);
+		window->Render(objectRay);
 
 		frameTime = SDL_GetTicks() - frameStart;
 

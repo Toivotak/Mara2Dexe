@@ -16,11 +16,15 @@ namespace Mara {
 		Uint32 frameStart;
 		int frameTime;
 
-		GameObjects gameObjects;
+		
+		std::vector<GameObjects> objectRay;
 
 	public:
 
-		void SetGameObjects(GameObjects gameObjects);
+		void SetObjectsRay(std::vector<GameObjects> objectRay);
+		
+		std::vector<GameObjects> GetObjectsRay();
+		GameObjects GetGameObjects(int i);
 		void Run();
 
 		~GameInstance();

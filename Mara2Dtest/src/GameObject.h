@@ -6,7 +6,7 @@ namespace Mara {
 
 	class GameObject {
 
-	private:
+	protected:
 		SDL_Surface* surface;
 		SDL_Rect sourceRect;
 		SDL_Rect destinationRect;
