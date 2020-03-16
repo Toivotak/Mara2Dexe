@@ -20,13 +20,13 @@ std::vector<Mara::GameObjects> Mara::GameObjects::GetObjectsRay() {
 	return objectsRay;
 }
 
-std::vector<Mara::GameObjects> Mara::GameObjects::GetObjectsRay(int i)
+/*std::vector<Mara::GameObjects> Mara::GameObjects::GetObjectsRay(int i)
 {
 	Mara::GameObjects* ray = new Mara::GameObjects();
 	ray = &objectsRay[i];
 	return *ray;
 	delete ray;
-}
+}*/
 
 Mara::GameObjects Mara::GameObjects::GetObjects(int i) {
 

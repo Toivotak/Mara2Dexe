@@ -5,14 +5,27 @@
 
 namespace Mara {
 
-	struct TextureComponent : public Component {
+	class TextureComponent : public Component {
 
+	private:
 		SDL_Surface* surface;
 		SDL_Rect sourceRect;
 		SDL_Rect destinationRect;
+	
+	public:
+		TextureComponent();
 
-		void Init() override;
-		void Update() override;
+		SDL_Rect GetSourceRect();
+		SDL_Rect GetDestinationRect();
+		SDL_Surface* GetSurface();
+
+		void SetSourceRect(int x, int y, int height, int width);
+		void SetDestinationRect(int x, int y, int height, int width);
+		void SetDestinationRect(SDL_Rect dRect);
+		void SetSurface(const char* fileName);
+
+		void Init();
+		void Update();
 
 		~TextureComponent();
 	};

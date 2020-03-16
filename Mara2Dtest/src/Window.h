@@ -38,16 +38,17 @@ namespace Mara {
 		bool fullscreen;
 		bool active = true;
 		const char* title;
+		std::vector<GameObjects> objectsRay;
 		
 	public:
 		Window();
 
 		void Init();
-		void Init(const char* title, int resolution, bool fullscreen, GameInstance objectsRay);
+		void Init(const char* title, int resolution, bool fullscreen, std::vector<GameObjects> objectsRay);
 		void Draw(const char*);
 		void HandleEvents();
 		void Update();
-		void Render(GameInstance objectsRay);
+		void Render(std::vector<GameObjects> objectsRay);
 		void Clean();
 		bool IsActive();
 

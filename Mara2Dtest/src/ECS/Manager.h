@@ -6,8 +6,19 @@ namespace Mara {
 	class Manager {
 
 	private:
-		Entity* entity;
-		std::vector<std::unique_ptr<Entity>> entities;
+		std::vector<Entity> entities;
 
+	public:
+		Manager();
+
+		void PushEntity(Entity entity);
+		Entity GetEntity(int i);
+		std::vector<Entity> GetEntityRay();
+		int EntityRaySize();
+
+		void Update();
+		void Init();
+
+		~Manager();
 	};
 }

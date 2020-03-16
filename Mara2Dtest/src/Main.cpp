@@ -5,10 +5,37 @@
 #include "GameObject.h"
 #include "GameObjects.h"
 #include "GameObjects/PlayerObject.h"
+#include "ECS/Manager.h"
+#include "ECS/Components/TextureComponent.h"
 
 int main(int argc, char* argv[]) {
 
+	Mara::Manager manager;
+	Mara::Entity entity;
+
 	Mara::GameInstance gi;
+	
+	int o = 0;
+
+	for (int i = 0; i < 39; i++) {
+		Mara::TextureComponent* texComp = new Mara::TextureComponent;
+		texComp->SetSurface("src/assets/Ground/Grass1.png");
+		texComp->SetSourceRect(0, 0, 32, 32);
+		texComp->SetDestinationRect(-32 + 32 * i, 0 + 32 * o, 32, 32);
+		if (i == 38) {
+			i = 0;
+			o++;
+		}
+		entity.PushComponent(*texComp);
+		if (o == 27) {
+			break;
+		}
+		delete texComp;
+	}
+	manager.PushEntity(entity);
+
+	gi.
+	/*
 	Mara::GameObject go;
 	Mara::GameObject go1;
 	Mara::GameObjects gos;
@@ -50,10 +77,14 @@ int main(int argc, char* argv[]) {
 	go1.SetPlayable(true);
 	
 	gos.PushGameObject(go1);
-
-	gi.SetGameObjects(gos);
+	gos.PushGameObjects(play);
+	gos.PushGameObjects(gos);
+	gi.SetObjectsRay(gos.GetObjectsRay());
 	
+	//gi.SetGameObjects(gos);
+	*/
 	gi.Run();
 
+	//delete texComp;
 	return 0;
 }

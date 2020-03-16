@@ -2,24 +2,17 @@
 #include <functional>
 
 namespace Mara {
-	
-	/*inline std::size_t GetComponentID() noexcept {
-
-		static size_t componentID;
-		componentID++;
-		return componentID;
-	}*/
 
 	class Component {
 
-	private: 
-		int componentID;
+	protected: 
+		int componentID = 0;
 
 	public:
 		int GetComponentID();
-		virtual void Init() = 0;
-		virtual void Update() = 0;
+		void Init();
+		void Update();
 		
-		virtual ~Component(); 
+		~Component(); 
 	};
 }

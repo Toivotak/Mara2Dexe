@@ -39,7 +39,7 @@ void Mara::Window::Init() {
 	}
 }
 
-void Mara::Window::Init(const char* title, int resolution, bool fullscreen, GameInstance objectsRay) {
+void Mara::Window::Init(const char* title, int resolution, bool fullscreen, std::vector<GameObjects> objectsRay) {
 
 	Uint32 fc = SDL_WINDOW_FULLSCREEN;
 	if (!fullscreen) {
@@ -64,19 +64,20 @@ void Mara::Window::Init(const char* title, int resolution, bool fullscreen, Game
 		active = true;
 	}
 	
-	goo.SetDestinationRect(0, 0, 128, 64);
+	/*goo.SetDestinationRect(0, 0, 128, 64);
 	goo.SetSourceRect(0, 0, 128, 64);
 	goo.SetMoveable(true);
 
 	goo.SetSurface("src/assets/Man1.png");
 
-	p = SDL_CreateTextureFromSurface(renderer, goo.GetSurface());
+	p = SDL_CreateTextureFromSurface(renderer, goo.GetSurface());*/
 	
+	instance.GetObjectsRay() = objectsRay;
 	
-	for (int j = 0; j < objectsRay.GetObjectsRay().size(); j++) {
+	for (int j = 0; j < instance.GetObjectsRay().size(); j++) {
 
 		GameObjects *gameObjects = new GameObjects();
-		gameObjects = &objectsRay.GetGameObjects(j);
+		gameObjects = &instance.GetGameObjects(j);
 
 		for (int i = 0; i < gameObjects->GetGameObjects().size(); i++) {
 
@@ -123,13 +124,22 @@ void Mara::Window::Update() {
 	i++;
 }
 
-void Mara::Window::Render(GameObjects objectsRay) {
+void Mara::Window::Render(std::vector<GameObjects> objectsRay) {
 
 	SDL_RenderClear(renderer);
 	
-	for (int i = 0; i < tex.size(); i++) {
-		go = gameObjects.GetObjext(i);
-		SDL_RenderCopy(renderer, tex[i], &go.GetSourceRect(), &go.GetDestinationRect());
+	instance.GetObjectsRay() = objectsRay;
+	
+	for (int j = 0; j < instance.GetObjectsRay().size(); j++) {
+
+		GameObjects* gameObjects = new GameObjects();
+		gameObjects = &instance.GetGameObjects(j);
+
+		for (int i = 0; i < tex.size(); i++) {
+			go = gameObjects->GetObject(i);
+			SDL_RenderCopy(renderer, tex[i], &go.GetSourceRect(), &go.GetDestinationRect());
+		}
+		delete gameObjects;
 	}
 	SDL_RenderCopy(renderer, p, &goo.GetSourceRect(), &goo.GetDestinationRect());
 
