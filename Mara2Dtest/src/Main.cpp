@@ -5,15 +5,17 @@
 #include "GameObject.h"
 #include "GameObjects.h"
 #include "GameObjects/PlayerObject.h"
-#include "ECS/Manager.h"
-#include "ECS/Components/TextureComponent.h"
+//#include "ECS/Manager.h"
+//#include "ECS/Components/TextureComponent.h"
 
 int main(int argc, char* argv[]) {
 
-	Mara::Manager manager;
+	Mara::GameInstance gi;
+	/*
+	Mara::Manager *manager = new Mara::Manager();
 	Mara::Entity entity;
 
-	Mara::GameInstance gi;
+	
 	
 	int o = 0;
 
@@ -32,10 +34,13 @@ int main(int argc, char* argv[]) {
 		}
 		delete texComp;
 	}
-	manager.PushEntity(entity);
+	manager->PushEntity(entity);
 
-	gi.
-	/*
+	gi.SetManager(manager);*/
+	gi.Run();
+
+	/*delete manager;
+	
 	Mara::GameObject go;
 	Mara::GameObject go1;
 	Mara::GameObjects gos;
@@ -83,7 +88,7 @@ int main(int argc, char* argv[]) {
 	
 	//gi.SetGameObjects(gos);
 	*/
-	gi.Run();
+	
 
 	//delete texComp;
 	return 0;

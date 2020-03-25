@@ -1,9 +1,9 @@
 #include "GameInstance.h"
 
-void Mara::GameInstance::SetManager(Manager *manager) {
+/*void Mara::GameInstance::SetManager(Manager *manager) {
 
 	this->manager = *manager;
-}
+}*/
 
 void Mara::GameInstance::SetObjectsRay(std::vector<GameObjects> objectRay) {
 
@@ -19,7 +19,7 @@ void Mara::GameInstance::Run() {
 
 	Mara::Window *window = new Mara::Window();
 
-	window->Init("aa", 3, false, GetObjectsRay());
+	window->Init("aa", 3, false );/*,manager*/
 
 	while(window->IsActive()) {
 

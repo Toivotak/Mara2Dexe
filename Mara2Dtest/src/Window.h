@@ -10,6 +10,8 @@
 #include "GameInstance.h"
 #include "EventHandling/Keyboard.h"
 #include "EventHandling/InputManager.h"
+#include "ECS/Manager.h"
+#include "ECS/Components/TextureComponent.h"
 
 namespace Mara {
 
@@ -44,7 +46,8 @@ namespace Mara {
 		Window();
 
 		void Init();
-		void Init(const char* title, int resolution, bool fullscreen, std::vector<GameObjects> objectsRay);
+		void Init(const char* title, int resolution, bool fullscreen);
+		void Init(const char* title, int resolution, bool fullscreen, Manager manager);
 		void Draw(const char*);
 		void HandleEvents();
 		void Update();

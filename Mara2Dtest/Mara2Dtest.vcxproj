@@ -87,6 +87,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>E:\softat\boost_1_72_0;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -99,7 +100,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>E:\softat\SDL2_ttf-2.0.15\include;E:\softat\SDL2_image-2.0.5\include;E:\softat\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\softat\boost_1_72_0;E:\softat\SDL2_ttf-2.0.15\include;E:\softat\SDL2_image-2.0.5\include;E:\softat\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -116,6 +117,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>E:\softat\boost_1_72_0;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -132,7 +134,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>E:\softat\SDL2_ttf-2.0.15\include;E:\softat\SDL2_image-2.0.5\include;E:\softat\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\softat\boost_1_72_0;E:\softat\SDL2_ttf-2.0.15\include;E:\softat\SDL2_image-2.0.5\include;E:\softat\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -144,10 +146,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\ECS\Component.cpp" />
-    <ClCompile Include="src\ECS\Components\TextureComponent.cpp" />
-    <ClCompile Include="src\ECS\Entity.cpp" />
-    <ClCompile Include="src\ECS\Manager.cpp" />
     <ClCompile Include="src\GameObjects\PlayerObject.cpp" />
     <ClCompile Include="src\EventHandling\InputManager.cpp" />
     <ClCompile Include="src\EventHandling\GameEvent.cpp" />
@@ -162,10 +160,6 @@
     <ClCompile Include="src\TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\ECS\Component.h" />
-    <ClInclude Include="src\ECS\Components\TextureComponent.h" />
-    <ClInclude Include="src\ECS\Entity.h" />
-    <ClInclude Include="src\ECS\Manager.h" />
     <ClInclude Include="src\GameObjects\PlayerObject.h" />
     <ClInclude Include="src\EventHandling\InputManager.h" />
     <ClInclude Include="src\EventHandling\GameEvent.h" />

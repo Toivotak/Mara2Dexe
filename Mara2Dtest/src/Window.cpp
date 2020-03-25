@@ -39,7 +39,7 @@ void Mara::Window::Init() {
 	}
 }
 
-void Mara::Window::Init(const char* title, int resolution, bool fullscreen, std::vector<GameObjects> objectsRay) {
+void Mara::Window::Init(const char* title, int resolution, bool fullscreen) {/*, Mara::Manager manager*/
 
 	Uint32 fc = SDL_WINDOW_FULLSCREEN;
 	if (!fullscreen) {
@@ -64,30 +64,36 @@ void Mara::Window::Init(const char* title, int resolution, bool fullscreen, std:
 		active = true;
 	}
 	
-	/*goo.SetDestinationRect(0, 0, 128, 64);
+	goo.SetDestinationRect(0, 0, 128, 64);
 	goo.SetSourceRect(0, 0, 128, 64);
 	goo.SetMoveable(true);
 
 	goo.SetSurface("src/assets/Man1.png");
 
-	p = SDL_CreateTextureFromSurface(renderer, goo.GetSurface());*/
+	p = SDL_CreateTextureFromSurface(renderer, goo.GetSurface());
 	
-	instance.GetObjectsRay() = objectsRay;
 	
-	for (int j = 0; j < instance.GetObjectsRay().size(); j++) {
 
-		GameObjects *gameObjects = new GameObjects();
-		gameObjects = &instance.GetGameObjects(j);
+	
+	/*for (int j = 0; j < manager.EntityRaySize(); j++) {
 
-		for (int i = 0; i < gameObjects->GetGameObjects().size(); i++) {
+		Entity* entity = new Entity();
+		entity = &manager.GetEntity(j);
 
-			go = gameObjects->GetObject(i);
-		
-			pa = SDL_CreateTextureFromSurface(renderer, go.GetSurface());
-			tex.push_back(pa);
-		}
-		delete gameObjects;
-	}
+		for (int i = 0; i < entity->ComponentRaySize(); i++) {
+			TextureComponent component;// = new Component();
+			component = boost::any_cast<TextureComponent>(entity->GetComponent(i));
+
+			/*if(component.GetComponentID() == 1) {
+				TextureComponent texCom = boost::any_cast<TextureComponent>(component);
+				pa = SDL_CreateTextureFromSurface(renderer, texCom.GetSurface());
+				tex.push_back(pa);
+				//delete texCom;
+			}
+			else {}*/
+		/*}
+		delete entity;
+	}*/
 }
 
 void Mara::Window::Draw(const char*) {
@@ -108,19 +114,20 @@ void Mara::Window::HandleEvents() {
 }
 
 void Mara::Window::Update() {
-	
-	//std::cout << i << "\n";
-	go.SetDestinationRect(i, i, i, i);
+
+	goo.SetDestinationRect(i, i, i, i);
+	std::cout << i << "\n";
+	/*go.SetDestinationRect(i, i, i, i);
 	go.SetSourceRect(i, i, i, i);
 	
 	//key.KeyEvent2();
 	//SDL_PollEvent(&event);
-	key->GetEvent(event);
+	/*key->GetEvent(event);
 	inputmgr.Update();
 	dRect = key->KeyEvent(goo);
 
 	goo.SetDestinationRect(key->KeyEvent(goo));
-	//goo.SetDestinationRect(i, i, 32, 32);
+	//*/
 	i++;
 }
 
@@ -128,7 +135,7 @@ void Mara::Window::Render(std::vector<GameObjects> objectsRay) {
 
 	SDL_RenderClear(renderer);
 	
-	instance.GetObjectsRay() = objectsRay;
+	/*instance.GetObjectsRay() = objectsRay;
 	
 	for (int j = 0; j < instance.GetObjectsRay().size(); j++) {
 
@@ -140,7 +147,7 @@ void Mara::Window::Render(std::vector<GameObjects> objectsRay) {
 			SDL_RenderCopy(renderer, tex[i], &go.GetSourceRect(), &go.GetDestinationRect());
 		}
 		delete gameObjects;
-	}
+	}*/
 	SDL_RenderCopy(renderer, p, &goo.GetSourceRect(), &goo.GetDestinationRect());
 
 	SDL_RenderPresent(renderer);

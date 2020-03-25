@@ -5,33 +5,22 @@ Mara::Entity::Entity()
 	: alive(true), components(NULL) {
 }
 
-void Mara::Entity::PushComponent(Component component) {
+void Mara::Entity::PushComponent(boost::any component) {
 
-	component.GetComponentID();
-	for (int i = 0; i < components.size(); i++) {
-		if (components.at(i).GetComponentID() == component.GetComponentID()) {
-			std::cout << "Already has this type of component!\n";
-		}
-		else {
-			components.push_back(component);
-		}	
-	}
+	components.push_back(component);
 }
 
-Mara::Component Mara::Entity::GetComponent(int i) {
+boost::any Mara::Entity::GetComponent(int i) {
 
-	Component* component = new Component();
-	component = &components.at(i);
-	return *component;
-	delete component;
+	return components.at(i);
 }
 
-std::vector<Mara::Component> Mara::Entity::GetComponentRay() {
+std::vector<boost::any> Mara::Entity::GetComponentRay() const {
 
 	return components;
 }
 
-int Mara::Entity::ComponentRaySize() {
+int Mara::Entity::ComponentRaySize() const {
 
 	return components.size();
 }
@@ -48,6 +37,7 @@ bool Mara::Entity::IsAlive() const {
 }
 
 void Mara::Entity::Destroy() {
+
 	alive = false;
 }
 
