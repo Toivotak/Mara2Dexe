@@ -1,46 +1,83 @@
 #include <iostream>
+#include <boost/any.hpp>
 #include "SDL.h"
 #include "Window.h"
 #include "GameInstance.h"
 #include "GameObject.h"
 #include "GameObjects.h"
 #include "GameObjects/PlayerObject.h"
-//#include "ECS/Manager.h"
-//#include "ECS/Components/TextureComponent.h"
+#include "ECS/Manager.h"
+#include "ECS/Components/TextureComponent.h"
+#include "ECS/Components/TextComp.h"
 
-int main(int argc, char* argv[]) {
+struct Teko {
+
+	SDL_Rect d;
+	SDL_Rect s;
+	SDL_Surface* surf;
+};
+
+int main(int argc, char** argv) {
 
 	Mara::GameInstance gi;
-	/*
+	
 	Mara::Manager *manager = new Mara::Manager();
 	Mara::Entity entity;
 
-	
-	
 	int o = 0;
 
 	for (int i = 0; i < 39; i++) {
-		Mara::TextureComponent* texComp = new Mara::TextureComponent;
-		texComp->SetSurface("src/assets/Ground/Grass1.png");
-		texComp->SetSourceRect(0, 0, 32, 32);
-		texComp->SetDestinationRect(-32 + 32 * i, 0 + 32 * o, 32, 32);
+		Mara::TextComp* texComp = new Mara::TextComp;
+		//texComp->surf = IMG_Load("src/assets/Ground/Grass1.png");
+		texComp->s = { 0, 0, 32, 32 };
+		texComp->d = { -32 + 32 * i, 0 + 32 * o, 32, 32 };
 		if (i == 38) {
 			i = 0;
 			o++;
 		}
-		entity.PushComponent(*texComp);
+		entity.PushComponent(texComp);
+		//SDL_FreeSurface(texComp->surf);
 		if (o == 27) {
 			break;
 		}
+		std::cout << texComp->d.x << '\n';
 		delete texComp;
+		
 	}
 	manager->PushEntity(entity);
+	Mara::Entity testany;
+	Mara::TextComp t;
+	t.d = { 30, 323, 32, 33 };
+	t.s = { 60, 623, 62, 63 };
+	t.surf = IMG_Load("src/assets/Ground/Grass1.png");
+	testany.PushComponent(t);
+	
 
-	gi.SetManager(manager);*/
+	Mara::Entity test;
+	test = (manager->GetEntity(0));
+	Mara::TextComp testi00;
+	try {
+		testi00 = std::any_cast<Mara::TextComp>(test.GetComponent(0));
+	}
+	catch (const std::bad_any_cast & e) {
+		std::cout << e.what() << '\n';
+	}
+	Mara::Entity test2;
+	test2.PushComponent(t);
+	try {
+		testi00 = std::any_cast<Mara::TextComp>(test2.GetComponent(0));
+	}
+	catch (const std::bad_any_cast & e) {
+		std::cout << e.what() << " 2\n";
+	}
+
+	
+	std::cout << testi00.d.x;
+	gi.SetManager(*manager);
 	gi.Run();
 
-	/*delete manager;
-	
+	delete manager;
+	/*
 	Mara::GameObject go;
 	Mara::GameObject go1;
 	Mara::GameObjects gos;

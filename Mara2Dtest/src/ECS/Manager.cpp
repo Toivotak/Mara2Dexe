@@ -4,9 +4,11 @@ Mara::Manager::Manager()
 	: entities(NULL) {
 }
 
-void Mara::Manager::PushEntity(Entity entity) {
+void Mara::Manager::PushEntity(Entity &entity) {
 
-	entities.push_back(entity);
+	Entity* ent = new Entity(entity);
+	entities.push_back(*ent);
+	delete ent;
 }
 
 Mara::Entity Mara::Manager::GetEntity(int i) {

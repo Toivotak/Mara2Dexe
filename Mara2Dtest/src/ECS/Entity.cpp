@@ -5,17 +5,22 @@ Mara::Entity::Entity()
 	: alive(true), components(NULL) {
 }
 
-void Mara::Entity::PushComponent(boost::any component) {
+Mara::Entity::Entity(const Entity& e) {
+	alive = e.alive;
+	components = e.components;
+}
+
+void Mara::Entity::PushComponent(std::any component) {
 
 	components.push_back(component);
 }
 
-boost::any Mara::Entity::GetComponent(int i) {
+std::any Mara::Entity::GetComponent(int i) {
 
 	return components.at(i);
 }
 
-std::vector<boost::any> Mara::Entity::GetComponentRay() const {
+std::vector<std::any> Mara::Entity::GetComponentRay() const {
 
 	return components;
 }

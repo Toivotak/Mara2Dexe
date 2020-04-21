@@ -39,7 +39,7 @@ void Mara::Window::Init() {
 	}
 }
 
-void Mara::Window::Init(const char* title, int resolution, bool fullscreen) {/*, Mara::Manager manager*/
+void Mara::Window::Init(const char* title, int resolution, bool fullscreen, Mara::Manager manager) {/**/
 
 	Uint32 fc = SDL_WINDOW_FULLSCREEN;
 	if (!fullscreen) {
@@ -71,29 +71,43 @@ void Mara::Window::Init(const char* title, int resolution, bool fullscreen) {/*,
 	goo.SetSurface("src/assets/Man1.png");
 
 	p = SDL_CreateTextureFromSurface(renderer, goo.GetSurface());
+	std::cout << manager.GetEntity(0).ComponentRaySize();
+	Manager mgr = manager;
+	std::cout << mgr.GetEntity(0).ComponentRaySize();
+
+	TextComp uusi;
+	Entity uusientity;
+	uusientity = manager.GetEntity(0);
+	std::cout << uusientity.ComponentRaySize();
 	
+	try {
+		uusi = std::any_cast<TextComp>(uusientity.GetComponent(0));
+	}
+	catch (const std::bad_any_cast & e) {
+		std::cout << e.what() << '\n';
+	}
+
+	std::cout << uusi.d.x;
 	
+	for (int j = 0; j < mgr.EntityRaySize(); j++) {
+		
+		Entity entity;
+		entity = mgr.GetEntity(j);
 
-	
-	/*for (int j = 0; j < manager.EntityRaySize(); j++) {
+		for (int i = 0; i < entity.ComponentRaySize(); i++) {
+			TextComp component;// = new Component();
+			component = std::any_cast<TextComp>(entity.GetComponent(i));
 
-		Entity* entity = new Entity();
-		entity = &manager.GetEntity(j);
-
-		for (int i = 0; i < entity->ComponentRaySize(); i++) {
-			TextureComponent component;// = new Component();
-			component = boost::any_cast<TextureComponent>(entity->GetComponent(i));
-
-			/*if(component.GetComponentID() == 1) {
-				TextureComponent texCom = boost::any_cast<TextureComponent>(component);
-				pa = SDL_CreateTextureFromSurface(renderer, texCom.GetSurface());
+			if(component.ID == 1) {
+				
+				pa = SDL_CreateTextureFromSurface(renderer, component.surf);
 				tex.push_back(pa);
 				//delete texCom;
 			}
-			else {}*/
-		/*}
-		delete entity;
-	}*/
+			else {}
+		}
+		//delete entity;
+	}
 }
 
 void Mara::Window::Draw(const char*) {

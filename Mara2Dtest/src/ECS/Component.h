@@ -1,5 +1,5 @@
 #pragma once
-#include <functional>
+
 
 namespace Mara {
 
@@ -10,9 +10,9 @@ namespace Mara {
 
 	public:
 		int GetComponentID();
-		void Init();
-		void Update();
+		virtual void Init() {}
+		virtual void Update() {}
 		
-		~Component(); 
+		virtual ~Component() {}
 	};
 }

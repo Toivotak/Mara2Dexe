@@ -5,13 +5,13 @@
 
 namespace Mara {
 
-	class TextureComponent{
+	class TextureComponent : public Component {
 
 	private:
 		SDL_Surface* surface;
 		SDL_Rect sourceRect;
 		SDL_Rect destinationRect;
-		int componentID;
+
 	public:
 		TextureComponent();
 

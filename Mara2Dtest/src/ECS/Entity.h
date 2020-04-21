@@ -3,6 +3,7 @@
 #include <memory>
 #include <vector>
 #include <boost/any.hpp>
+#include <any>
 
 namespace Mara {
 
@@ -10,14 +11,15 @@ namespace Mara {
 
 	private:
 		bool alive;
-		std::vector<boost::any> components;
+		std::vector<std::any> components;
 
 	public:
 		Entity();
+		Entity(const Entity& e);
 
-		void PushComponent(boost::any component);
-		boost::any GetComponent(int i);
-		std::vector<boost::any> GetComponentRay() const;
+		void PushComponent(std::any component);
+		std::any GetComponent(int i);
+		std::vector<std::any> GetComponentRay() const;
 		int ComponentRaySize() const;
 
 		void Update();

@@ -1,10 +1,13 @@
 #pragma once
 #include <vector>
+#include <any>
 #include "Window.h"
 #include "GameObject.h"
 #include "GameObjects.h"
 #include "Vector2.h"
-//#include "ECS/Manager.h"
+#include "ECS/Manager.h"
+#include "ECS/Components/TextComp.h"
+
 
 
 namespace Mara {
@@ -17,12 +20,12 @@ namespace Mara {
 		Uint32 frameStart;
 		int frameTime;
 
-		//Manager manager;
+		Manager manager;
 		std::vector<GameObjects> objectRay;
 
 	public:
 
-		//void SetManager(Manager *manager);
+		void SetManager(Manager manager);
 
 		void SetObjectsRay(std::vector<GameObjects> objectRay);
 		
