@@ -150,9 +150,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\ECS\Component.cpp" />
-    <ClCompile Include="src\ECS\Entity.cpp" />
-    <ClCompile Include="src\ECS\Manager.cpp" />
     <ClCompile Include="src\GameObjects\PlayerObject.cpp" />
     <ClCompile Include="src\EventHandling\InputManager.cpp" />
     <ClCompile Include="src\EventHandling\GameEvent.cpp" />
