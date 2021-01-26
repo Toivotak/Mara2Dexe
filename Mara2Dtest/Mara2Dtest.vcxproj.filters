@@ -101,6 +101,9 @@
     <ClInclude Include="src\ECS\Components\TextComp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\ECS\SystemManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="src\assets\Man2.png">

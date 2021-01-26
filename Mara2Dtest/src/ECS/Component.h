@@ -3,16 +3,24 @@
 
 namespace Mara {
 
-	class Component {
+	constexpr int MAXCOMPONENTTYPES = 8;
 
-	protected: 
-		int componentID = 0;
+	static size_t getComponentID()
+	{
+		static size_t newID{ 0u };
+		return newID++;
+	}
+
+	class Component
+	{
+	private:
+		const size_t m_id;
 
 	public:
-		int GetComponentID();
-		virtual void Init() {}
-		virtual void Update() {}
-		
+		Component() : m_id{ getComponentID() } {}
+
+		size_t getID() const { return m_id; }
+
 		virtual ~Component() {}
 	};
 }

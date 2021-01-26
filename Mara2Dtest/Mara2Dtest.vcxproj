@@ -180,6 +180,7 @@
     <ClInclude Include="src\Window.h" />
     <ClInclude Include="src\TextureManager.h" />
     <ClInclude Include="src\ECS\Components\TextComp.h" />
+    <ClInclude Include="src\ECS\SystemManager.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="src\assets\Ground\DirtRoadBottom.png" />
